@@ -4,7 +4,7 @@
     {
       "name": "valcourt-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8420"],
+      "runtimeArgs": ["-m", "http.server", "8420", "--directory", "dist"],
       "port": 8420
     }
   ]

@@ -1,0 +1,40 @@
+---
+title: Idea Generator
+description: Generate novel, randomized systems biology and bioengineering project ideas instantly.
+nav: fun
+main_class: generator-page
+---
+        
+    <div class="container" style="max-width: 650px;">
+        <h1 style="text-align: center;">Idea Generator</h1>
+        <p style="text-align: center; color: var(--text-muted);">Feeling stuck? Generate a groundbreaking new research proposal at the click of a button.</p>
+        
+        <div class="generator-box">
+            <p id="phrase">Loading generator...</p>
+            <p id="x"></p>
+            <p id="for" style="margin: 0.5rem 0;">for</p>
+            <p id="y"></p>
+            
+            <button type="button" class="btn" style="margin-top: 2.5rem;" onclick="update(phrase[randomInt(phrase.length - 1)], tech[randomInt(tech.length - 1)], app[randomInt(app.length - 1)])">Generate Idea</button>
+        </div>
+    </div>
+    
+    <script>
+    var phrase = ["Wouldn't it be cool if there were...", "Have you thought about...", "What about..."];
+    var tech = ["CRISPR", "Uber", "RNA-seq", "single-cell techniques", "click chemistry", "microscopy", "optogenetics", "flow cytometry", "compressed sensing", "big data", "cryptography", "quantum dots", "barcoding", "mass spec", "deep learning", "a good animal model", "-omics", "drones", "robotics", "biological sensors", "automation", "MRI", "deconvolution", "a comprehensive database", "gene drives", "a peer-to-peer solution", "crowdsourcing", "3D printing", "high-throughput screens", "NMR", "Bayesian inference", "the blockchain", "directed evolution", "wearables", "new funding models", "nanoparticles", "wireless"];
+    var app  = ["the environment", "climate change", "batteries", "recycling", "the brain", "transportation", "the government", "stem cell therapeutics", "antibiotic resistance", "orphan diseases", "Alzheimer's", "vaccine delivery", "food deserts", "blindness", "organ transplantation", "terrorism prediction", "agricultural productivity", "missile defense", "radiation detection", "headaches", "opioid addiction", "PTSD", "rare mineral supply problems", "autism", "hazardous waste disposal", "energy generation", "drug discovery", "bioterrorism defense", "paralyzed patients", "exoplanet detection", "protein structure prediction", "obesity", "carbon capture", "traffic", "clean water availability", "green chemical synthesis", "drug manufacturing", "energy storage", "pollution remediation", "cancer", "heart disease", "stress management", "aging", "the microbiome", "the post-scarcity economy", "agricultural pests", "demographic challenges"];
+    
+    function update(phrase, a, b) {
+        document.getElementById("phrase").innerHTML = phrase;
+        document.getElementById("x").innerHTML = a;
+        document.getElementById("y").innerHTML = b;
+    }
+    
+    function randomInt(max) {
+        return Math.floor(Math.random() * (max + 1));
+    }
+    
+    document.getElementById("for").innerHTML = "for";
+    update(phrase[randomInt(phrase.length - 1)], tech[randomInt(tech.length - 1)], app[randomInt(app.length - 1)]);
+    </script>
+    
